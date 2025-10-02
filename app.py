@@ -219,15 +219,12 @@ def display_clear_result(result_data, analysis_type="Analysis"):
         <p><strong>Confidence Level:</strong> {ResultParser.get_confidence_level(score)}</p>
         <p><strong>Risk Level:</strong> {ResultParser.get_risk_level(classification, score)}</p>
     </div>
-    """, unsafe_allow_html=True)
 
     # Detailed Analysis Button
     if st.button(
-        f"🔍 View Detailed Analysis - What factors indicate {category_info['category']}?",
-        key=f"detailed_analysis_{analysis_type}",
-        help="Click to see point-wise breakdown of analysis factors"
-    ):
-        show_detailed_factor_analysis(result_data, category_info)
+        with st.expander(f"🔍 Detailed Analysis — Why this is {category_info['category']}?"):
+    show_detailed_factor_analysis(result_data, category_info)
+)
 
 def show_detailed_factor_analysis(result_data, category_info):
     """Show detailed factor-by-factor analysis"""

@@ -4,6 +4,7 @@ AI-Powered Multimodal Fake News Detector - Enhanced Output Formatting
 Advanced Streamlit Application with clear result categorization and detailed analysis
 """
 
+from typing import Dict, Any, List
 import streamlit as st
 from PIL import Image
 import io
